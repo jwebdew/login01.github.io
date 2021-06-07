@@ -1,0 +1,227 @@
+@charset "utf-8";
+@import url("reset.css");
+
+html, body {
+    background-color: #ebebeb;
+}
+
+.mobile_h {display: none;}
+header {
+    background-color: rgba(255, 255, 255, .6);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 9;
+    transition: .6s;
+}
+header.fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}
+header .logo img {transition: .5s;}
+header.fixed .menu_top {display: none;}
+header.fixed .logo img {
+    width: 100px; 
+}
+header.fixed .main > li {
+    line-height: 60px; 
+}
+
+.header {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.header .logo {
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+}
+.menu_top {overflow: hidden; transition: .5s; }
+.menu_top ul {
+    float: right;
+    margin-top: 20px;
+}
+.menu_top ul li {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.header nav {
+    text-align: right;
+}
+.main > li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 17px;
+    margin-left: 100px;
+    line-height: 80px;
+    position: relative;
+    transition: .6s;
+}
+.main > li > a {
+    position: relative;
+    cursor: pointer;
+}
+.main > li > a::before {
+    content:'';
+    width: 1px;
+    height: 0;
+    background-color: #3FA8B5;
+    position: absolute;
+    top:35px;
+    left:50%;
+    z-index: 2;
+    opacity: 0;
+    transition: .5s;
+}
+.main .sub {
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+    padding: 40px 10px;
+    display: none;
+}
+.main .sub li {
+    line-height: 2;
+}
+.main > li.active > a {
+    color: #3FA8B5;
+}
+.main > li.active > a::before {
+    opacity: 1;
+    height: 70px;
+}
+
+footer {
+    background-color: #fff;
+    margin-top: 110px;
+}
+.info {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.info > div {
+    float: left;
+    font-size: 14px;
+    /* height: 113px; */
+    /* line-height: 113px; */
+    padding: 47px 0;
+}
+.info .left {
+    width: 29%;
+    border-right: 1px solid #ddd;
+}
+.info .right {
+    width: 70%;
+}
+.info span {
+    margin: 0 1%;
+    word-break: keep-all;
+}
+@media screen and (max-width: 1024px) {
+    .pc_h {display: none;}
+    .menu_top {display: none;}
+    .mobile_h {display: block;}
+    header {height: 80px;}
+    .header {height: 100%;}
+    .header .logo {left: 20px;}
+    .logo img {width: 100px;}
+    .xi-bars {
+        line-height: 80px;
+        font-size: 30px;
+        text-align: right;
+        margin-right: 20px;
+    }
+    .xi-bars span {font-size: 0;}
+    .header nav {text-align: left;}
+    .mobile {
+        position: fixed;
+        top: 0;
+        left:-100%;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+    }
+    .m_menu_top ul {
+        background-color: #3FA8B5;
+        padding: 0 20px;
+    }
+    .m_menu_top ul li {line-height: 50px;}
+    .m_menu_top ul li a {color: #fff;}
+
+    .m_main > li > a {
+        line-height: 70px;
+        padding: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+    .m_main .sub {
+        display: none;
+    }
+    .m_main .sub > li {
+        line-height: 45px;
+        padding: 0 20px;
+        background-color: #eee;
+    }
+    .m_main li.on > a {
+        color: #3FA8B5;
+    }
+
+    .xi-close {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        line-height: 50px;
+        border-radius: 10px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .6);
+    
+    }
+    .xi-close span {font-size: 0;}
+   
+}
+@media screen and (max-width: 767px) {
+    footer {
+        margin-top: 50px;
+    }
+    .info {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .info > div {
+        padding: 10px 0;
+    }
+    .info .left {
+        width: 100%;
+        border-right: 0;
+    }
+    .info .right {
+        width: 100%;
+    }
+    .info .left span:first-child {
+        margin-left:0;
+    }
+    .info .right span:first-child {
+        margin-left:0;
+    }
+}
